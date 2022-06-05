@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ title }}</h5>
+    <p class="card-text">{{ subtitle }}</p>
+
+    <h5>
+      <p>
+        <strong>Temperatura: </strong> {{ temperature | number:'1.2-2' }}º
+      </p>
+      <p>
+        <strong>Possibilidade de chuva: </strong> {{ rainPossibility }}
+      </p>
+    </h5>
+
+    <button class="btn btn-info me-2" (click)="reload()">Recarregar</button>
+    <button class="btn btn-primary me-2" (click)="like()">Gostei</button>
+    <button class="btn btn-danger" (click)="unlike()">Não gostei</button>
+  </div>
+</div>
