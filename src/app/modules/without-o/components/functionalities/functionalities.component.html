@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Funcionalidades</h5>
+    <span class="card-text">Eis aqui algumas de nossas funcionalidades!</span>
+
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Leitor de temperatura remoto</h5>
+
+              <div class="spinner-border" role="status" *ngIf="!canShowTemperatureMeasurementResume()">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+
+              <div *ngIf="canShowTemperatureMeasurementResume()">
+                <p class="card-text" *ngFor="let measurement of temperatureMeasurementResume">
+                  Setor {{ measurement.sector }}: {{ measurement.temperature }}º ({{ measurement.date | date:'mediumDate' }})
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Medidor de consumo de energia</h5>
+
+              <div class="spinner-border" role="status" *ngIf="!canShowEnergyConsumeResume()">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+
+              <div *ngIf="canShowEnergyConsumeResume()">
+                <p class="card-text" *ngFor="let consume of energyConsumeResume">
+                  Data inicial: {{ consume.startDate | date:'shortDate' }} - Data final: {{ consume.finalDate | date:'shortDate' }}, Consumo: {{ consume.accrued }} kW
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Leitor de temperatura remoto</h5>
+
+    <div class="spinner-border" role="status" *ngIf="!canShowTemperatureMeasurementResume()">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+
+    <div *ngIf="canShowTemperatureMeasurementResume()">
+      <p class="card-text" *ngFor="let measurement of temperatureMeasurementResume">
+        Setor {{ measurement.sector }}: {{ measurement.temperature }}º ({{ measurement.date | date:'mediumDate' }})
+      </p>
+    </div>
+  </div>
+</div>

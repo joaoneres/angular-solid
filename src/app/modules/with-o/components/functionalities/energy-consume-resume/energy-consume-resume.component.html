@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Medidor de consumo de energia</h5>
+
+    <div class="spinner-border" role="status" *ngIf="!canShowEnergyConsumeResume()">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+
+    <div *ngIf="canShowEnergyConsumeResume()">
+      <p class="card-text" *ngFor="let consume of energyConsumeResume">
+        Data inicial: {{ consume.startDate | date:'shortDate' }} - Data final: {{ consume.finalDate | date:'shortDate' }}, Consumo: {{ consume.accrued }} kW
+      </p>
+    </div>
+  </div>
+</div>
