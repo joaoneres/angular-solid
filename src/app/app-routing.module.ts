@@ -8,12 +8,12 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'without-o',
-    loadChildren: () => import('./modules/without-o/without-o.module').then(module => module.WithoutOModule),
+    path: 'with-l',
+    loadChildren: () => import('./modules/with-l/with-l.module').then(module => module.WithLModule),
   },
   {
-    path: 'with-o',
-    loadChildren: () => import('./modules/with-o/with-o.module').then(module => module.WithOModule),
+    path: 'without-l',
+    loadChildren: () => import('./modules/without-l/without-l.module').then(module => module.WithoutLModule),
   },
   {
     path: '**',

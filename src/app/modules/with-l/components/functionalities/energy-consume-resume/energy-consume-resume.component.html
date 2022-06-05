@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ title }}</h5>
+
+    <div class="spinner-border" role="status" *ngIf="!canShowEnergyConsumeResume()">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+
+    <div *ngIf="canShowEnergyConsumeResume()">
+      <p class="card-text" *ngFor="let consume of energyConsumeResume">
+        Data inicial: {{ consume.startDate | date:'shortDate' }} - Data final: {{ consume.finalDate | date:'shortDate' }}, Consumo: {{ consume.accrued }} kW
+      </p>
+    </div>
+
+    <blockquote class="blockquote mb-0 mt-4">
+      <footer class="blockquote-footer">Próxima previsão de medida:  <cite title="Source Title">{{ getNextRecordDate(10) }}</cite></footer>
+    </blockquote>
+  </div>
+</div>

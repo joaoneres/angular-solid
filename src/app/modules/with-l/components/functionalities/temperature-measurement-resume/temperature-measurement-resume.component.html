@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ title }}</h5>
+
+    <div class="spinner-border" role="status" *ngIf="!canShowTemperatureMeasurementResume()">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+
+    <div *ngIf="canShowTemperatureMeasurementResume()">
+      <p class="card-text" *ngFor="let measurement of temperatureMeasurementResume">
+        Setor {{ measurement.sector }}: {{ measurement.temperature }}º ({{ measurement.date | date:'mediumDate' }})
+      </p>
+    </div>
+
+    <blockquote class="blockquote mb-0 mt-4">
+      <footer class="blockquote-footer">Próxima previsão de medida:  <cite title="Source Title">{{ getNextRecordDate(30) }}</cite></footer>
+    </blockquote>
+  </div>
+</div>
