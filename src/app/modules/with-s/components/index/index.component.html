@@ -1,0 +1,13 @@
+<app-with-s-partials-navbar></app-with-s-partials-navbar>
+
+<div class="container-fluid">
+  <div class="row mt-4 mb-4">
+    <div class="col-md-12">
+      <app-with-s-partials-process (sortedArray)="sortedArray = $event"></app-with-s-partials-process>
+    </div>
+
+    <div class="col-md-12 mt-3">
+      <app-with-s-partials-result [result]="sortedArray"></app-with-s-partials-result>
+    </div>
+  </div>
+</div>

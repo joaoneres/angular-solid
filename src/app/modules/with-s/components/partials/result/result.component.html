@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Resultado</h5>
+    <p class="card-text">Abaixo os valores ordenados (ordem decrescente): </p>
+
+    <div class="alert alert-info" *ngIf="canDisplayResult()">
+      <span *ngFor="let number of result; let i = index; let l = last;">
+        {{ number }}<span *ngIf="!l">, </span>
+      </span>
+    </div>
+
+    <div class="alert alert-danger" *ngIf="!canDisplayResult()">
+      Não existem dados para dispor!
+    </div>
+  </div>
+</div>
